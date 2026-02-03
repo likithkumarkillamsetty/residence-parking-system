@@ -1,0 +1,61 @@
+[
+  { "slotId": "A101", "ownerId": "A101", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A102", "ownerId": "A102", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A103", "ownerId": "A103", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A104", "ownerId": "A104", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A105", "ownerId": "A105", "occupied": false, "currentVehicle": "" },
+
+  { "slotId": "A201", "ownerId": "A201", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A202", "ownerId": "A202", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A203", "ownerId": "A203", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A204", "ownerId": "A204", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A205", "ownerId": "A205", "occupied": false, "currentVehicle": "" },
+
+  { "slotId": "A301", "ownerId": "A301", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A302", "ownerId": "A302", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A303", "ownerId": "A303", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A304", "ownerId": "A304", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A305", "ownerId": "A305", "occupied": false, "currentVehicle": "" },
+
+  { "slotId": "A401", "ownerId": "A401", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A402", "ownerId": "A402", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A403", "ownerId": "A403", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A404", "ownerId": "A404", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A405", "ownerId": "A405", "occupied": false, "currentVehicle": "" },
+
+  { "slotId": "A501", "ownerId": "A501", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A502", "ownerId": "A502", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A503", "ownerId": "A503", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A504", "ownerId": "A504", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A505", "ownerId": "A505", "occupied": false, "currentVehicle": "" },
+
+  { "slotId": "A601", "ownerId": "A601", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A602", "ownerId": "A602", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A603", "ownerId": "A603", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A604", "ownerId": "A604", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A605", "ownerId": "A605", "occupied": false, "currentVehicle": "" },
+
+  { "slotId": "A701", "ownerId": "A701", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A702", "ownerId": "A702", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A703", "ownerId": "A703", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A704", "ownerId": "A704", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A705", "ownerId": "A705", "occupied": false, "currentVehicle": "" },
+
+  { "slotId": "A801", "ownerId": "A801", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A802", "ownerId": "A802", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A803", "ownerId": "A803", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A804", "ownerId": "A804", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A805", "ownerId": "A805", "occupied": false, "currentVehicle": "" },
+
+  { "slotId": "A901", "ownerId": "A901", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A902", "ownerId": "A902", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A903", "ownerId": "A903", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A904", "ownerId": "A904", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A905", "ownerId": "A905", "occupied": false, "currentVehicle": "" },
+
+  { "slotId": "A1001", "ownerId": "A1001", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A1002", "ownerId": "A1002", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A1003", "ownerId": "A1003", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A1004", "ownerId": "A1004", "occupied": false, "currentVehicle": "" },
+  { "slotId": "A1005", "ownerId": "A1005", "occupied": false, "currentVehicle": "" }
+]

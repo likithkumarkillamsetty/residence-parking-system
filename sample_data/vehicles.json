@@ -1,0 +1,61 @@
+[
+  { "numberPlate": "TS09A101", "ownerId": "A101", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A102", "ownerId": "A102", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A103", "ownerId": "A103", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A104", "ownerId": "A104", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A105", "ownerId": "A105", "model": "Sedan", "color": "White" },
+
+  { "numberPlate": "TS09A201", "ownerId": "A201", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A202", "ownerId": "A202", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A203", "ownerId": "A203", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A204", "ownerId": "A204", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A205", "ownerId": "A205", "model": "Sedan", "color": "White" },
+
+  { "numberPlate": "TS09A301", "ownerId": "A301", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A302", "ownerId": "A302", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A303", "ownerId": "A303", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A304", "ownerId": "A304", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A305", "ownerId": "A305", "model": "Sedan", "color": "White" },
+
+  { "numberPlate": "TS09A401", "ownerId": "A401", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A402", "ownerId": "A402", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A403", "ownerId": "A403", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A404", "ownerId": "A404", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A405", "ownerId": "A405", "model": "Sedan", "color": "White" },
+
+  { "numberPlate": "TS09A501", "ownerId": "A501", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A502", "ownerId": "A502", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A503", "ownerId": "A503", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A504", "ownerId": "A504", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A505", "ownerId": "A505", "model": "Sedan", "color": "White" },
+
+  { "numberPlate": "TS09A601", "ownerId": "A601", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A602", "ownerId": "A602", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A603", "ownerId": "A603", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A604", "ownerId": "A604", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A605", "ownerId": "A605", "model": "Sedan", "color": "White" },
+
+  { "numberPlate": "TS09A701", "ownerId": "A701", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A702", "ownerId": "A702", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A703", "ownerId": "A703", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A704", "ownerId": "A704", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A705", "ownerId": "A705", "model": "Sedan", "color": "White" },
+
+  { "numberPlate": "TS09A801", "ownerId": "A801", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A802", "ownerId": "A802", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A803", "ownerId": "A803", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A804", "ownerId": "A804", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A805", "ownerId": "A805", "model": "Sedan", "color": "White" },
+
+  { "numberPlate": "TS09A901", "ownerId": "A901", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A902", "ownerId": "A902", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A903", "ownerId": "A903", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A904", "ownerId": "A904", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A905", "ownerId": "A905", "model": "Sedan", "color": "White" },
+
+  { "numberPlate": "TS09A1001", "ownerId": "A1001", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A1002", "ownerId": "A1002", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A1003", "ownerId": "A1003", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A1004", "ownerId": "A1004", "model": "Sedan", "color": "White" },
+  { "numberPlate": "TS09A1005", "ownerId": "A1005", "model": "Sedan", "color": "White" }
+]

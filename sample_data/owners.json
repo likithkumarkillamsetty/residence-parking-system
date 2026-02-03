@@ -1,0 +1,61 @@
+[
+  { "name": "Owner A101", "phone": "9000010001", "flatNumber": "A101", "vehicleNumbers": ["TS09A101"] },
+  { "name": "Owner A102", "phone": "9000010002", "flatNumber": "A102", "vehicleNumbers": ["TS09A102"] },
+  { "name": "Owner A103", "phone": "9000010003", "flatNumber": "A103", "vehicleNumbers": ["TS09A103"] },
+  { "name": "Owner A104", "phone": "9000010004", "flatNumber": "A104", "vehicleNumbers": ["TS09A104"] },
+  { "name": "Owner A105", "phone": "9000010005", "flatNumber": "A105", "vehicleNumbers": ["TS09A105"] },
+
+  { "name": "Owner A201", "phone": "9000010006", "flatNumber": "A201", "vehicleNumbers": ["TS09A201"] },
+  { "name": "Owner A202", "phone": "9000010007", "flatNumber": "A202", "vehicleNumbers": ["TS09A202"] },
+  { "name": "Owner A203", "phone": "9000010008", "flatNumber": "A203", "vehicleNumbers": ["TS09A203"] },
+  { "name": "Owner A204", "phone": "9000010009", "flatNumber": "A204", "vehicleNumbers": ["TS09A204"] },
+  { "name": "Owner A205", "phone": "9000010010", "flatNumber": "A205", "vehicleNumbers": ["TS09A205"] },
+
+  { "name": "Owner A301", "phone": "9000010011", "flatNumber": "A301", "vehicleNumbers": ["TS09A301"] },
+  { "name": "Owner A302", "phone": "9000010012", "flatNumber": "A302", "vehicleNumbers": ["TS09A302"] },
+  { "name": "Owner A303", "phone": "9000010013", "flatNumber": "A303", "vehicleNumbers": ["TS09A303"] },
+  { "name": "Owner A304", "phone": "9000010014", "flatNumber": "A304", "vehicleNumbers": ["TS09A304"] },
+  { "name": "Owner A305", "phone": "9000010015", "flatNumber": "A305", "vehicleNumbers": ["TS09A305"] },
+
+  { "name": "Owner A401", "phone": "9000010016", "flatNumber": "A401", "vehicleNumbers": ["TS09A401"] },
+  { "name": "Owner A402", "phone": "9000010017", "flatNumber": "A402", "vehicleNumbers": ["TS09A402"] },
+  { "name": "Owner A403", "phone": "9000010018", "flatNumber": "A403", "vehicleNumbers": ["TS09A403"] },
+  { "name": "Owner A404", "phone": "9000010019", "flatNumber": "A404", "vehicleNumbers": ["TS09A404"] },
+  { "name": "Owner A405", "phone": "9000010020", "flatNumber": "A405", "vehicleNumbers": ["TS09A405"] },
+
+  { "name": "Owner A501", "phone": "9000010021", "flatNumber": "A501", "vehicleNumbers": ["TS09A501"] },
+  { "name": "Owner A502", "phone": "9000010022", "flatNumber": "A502", "vehicleNumbers": ["TS09A502"] },
+  { "name": "Owner A503", "phone": "9000010023", "flatNumber": "A503", "vehicleNumbers": ["TS09A503"] },
+  { "name": "Owner A504", "phone": "9000010024", "flatNumber": "A504", "vehicleNumbers": ["TS09A504"] },
+  { "name": "Owner A505", "phone": "9000010025", "flatNumber": "A505", "vehicleNumbers": ["TS09A505"] },
+
+  { "name": "Owner A601", "phone": "9000010026", "flatNumber": "A601", "vehicleNumbers": ["TS09A601"] },
+  { "name": "Owner A602", "phone": "9000010027", "flatNumber": "A602", "vehicleNumbers": ["TS09A602"] },
+  { "name": "Owner A603", "phone": "9000010028", "flatNumber": "A603", "vehicleNumbers": ["TS09A603"] },
+  { "name": "Owner A604", "phone": "9000010029", "flatNumber": "A604", "vehicleNumbers": ["TS09A604"] },
+  { "name": "Owner A605", "phone": "9000010030", "flatNumber": "A605", "vehicleNumbers": ["TS09A605"] },
+
+  { "name": "Owner A701", "phone": "9000010031", "flatNumber": "A701", "vehicleNumbers": ["TS09A701"] },
+  { "name": "Owner A702", "phone": "9000010032", "flatNumber": "A702", "vehicleNumbers": ["TS09A702"] },
+  { "name": "Owner A703", "phone": "9000010033", "flatNumber": "A703", "vehicleNumbers": ["TS09A703"] },
+  { "name": "Owner A704", "phone": "9000010034", "flatNumber": "A704", "vehicleNumbers": ["TS09A704"] },
+  { "name": "Owner A705", "phone": "9000010035", "flatNumber": "A705", "vehicleNumbers": ["TS09A705"] },
+
+  { "name": "Owner A801", "phone": "9000010036", "flatNumber": "A801", "vehicleNumbers": ["TS09A801"] },
+  { "name": "Owner A802", "phone": "9000010037", "flatNumber": "A802", "vehicleNumbers": ["TS09A802"] },
+  { "name": "Owner A803", "phone": "9000010038", "flatNumber": "A803", "vehicleNumbers": ["TS09A803"] },
+  { "name": "Owner A804", "phone": "9000010039", "flatNumber": "A804", "vehicleNumbers": ["TS09A804"] },
+  { "name": "Owner A805", "phone": "9000010040", "flatNumber": "A805", "vehicleNumbers": ["TS09A805"] },
+
+  { "name": "Owner A901", "phone": "9000010041", "flatNumber": "A901", "vehicleNumbers": ["TS09A901"] },
+  { "name": "Owner A902", "phone": "9000010042", "flatNumber": "A902", "vehicleNumbers": ["TS09A902"] },
+  { "name": "Owner A903", "phone": "9000010043", "flatNumber": "A903", "vehicleNumbers": ["TS09A903"] },
+  { "name": "Owner A904", "phone": "9000010044", "flatNumber": "A904", "vehicleNumbers": ["TS09A904"] },
+  { "name": "Owner A905", "phone": "9000010045", "flatNumber": "A905", "vehicleNumbers": ["TS09A905"] },
+
+  { "name": "Owner A1001", "phone": "9000010046", "flatNumber": "A1001", "vehicleNumbers": ["TS09A1001"] },
+  { "name": "Owner A1002", "phone": "9000010047", "flatNumber": "A1002", "vehicleNumbers": ["TS09A1002"] },
+  { "name": "Owner A1003", "phone": "9000010048", "flatNumber": "A1003", "vehicleNumbers": ["TS09A1003"] },
+  { "name": "Owner A1004", "phone": "9000010049", "flatNumber": "A1004", "vehicleNumbers": ["TS09A1004"] },
+  { "name": "Owner A1005", "phone": "9000010050", "flatNumber": "A1005", "vehicleNumbers": ["TS09A1005"] }
+]
