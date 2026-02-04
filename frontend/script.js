@@ -244,33 +244,26 @@ async function runClientOCR(file) {
     showToast("Running OCR…", "success");
 
     try {
-        // create worker and initialize
-        const worker = Tesseract.createWorker?.() ?? (await Tesseract.createWorker());
-        // worker lifecycle
-        await worker.load();
-        await worker.loadLanguage("eng");
-        await worker.initialize("eng");
-
         const imageDataURL = await fileToDataURL(file);
-        const { data: { text } } = await worker.recognize(imageDataURL);
 
-        await worker.terminate();
+        const result = await Tesseract.recognize(
+            imageDataURL,
+            "eng",
+            {
+                tessedit_char_whitelist: "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            }
+        );
 
-        const raw = (text || "").replace(/\n/g, " ").trim();
+        const raw = (result.data.text || "").replace(/\n/g, " ").trim();
 
-        // Strong regex match (India-format tolerant)
         const plateRegex = /([A-Z]{2}\s?\d{1,2}\s?[A-Z]{1,2}\s?\d{4})/i;
-        let match = raw.match(plateRegex);
+        const match = raw.match(plateRegex);
 
         if (match) {
-            let plate = match[1].replace(/\s+/g, "").toUpperCase();
-            return { numberPlate: plate, rawText: raw };
-        }
-
-        // Soft fallback
-        let fallback = raw.match(/[A-Z0-9]{6,12}/i);
-        if (fallback) {
-            return { numberPlate: fallback[0].toUpperCase(), rawText: raw, lowConfidence: true };
+            return {
+                numberPlate: match[1].replace(/\s+/g, "").toUpperCase(),
+                rawText: raw
+            };
         }
 
         return null;
@@ -279,6 +272,7 @@ async function runClientOCR(file) {
         return null;
     }
 }
+
 
 function fileToDataURL(file) {
     return new Promise((resolve) => {
@@ -400,6 +394,7 @@ function renderAlerts() {
     const body = dom.tables.alertsBody;
     body.innerHTML = "";
 
+
     (parkingAlerts || []).forEach((alert) => {
         const tr = document.createElement("tr");
 
@@ -415,9 +410,17 @@ function renderAlerts() {
             }
             </td>
             <td>
+    ${alert.status === "PENDING" || !alert.status
+                ? `
                 <button class="btn success" onclick="acceptAlert('${alert.id || alert.slotId}')">Accept</button>
                 <button class="btn danger" onclick="rejectAlert('${alert.id || alert.slotId}')">Reject</button>
-            </td>
+              `
+                : `<span style="font-weight:600; color:${alert.status === "RESOLVED" ? "green" : "red"}">
+                 ${alert.status}
+               </span>`
+            }
+</td>
+
         `;
 
         body.appendChild(tr);
@@ -712,6 +715,7 @@ async function acceptAlert(id) {
         // refresh UI immediately
         await fetchAlerts();
         await fetchSlots();
+        updateDashboard();
 
     } catch (err) {
         console.error(err);
@@ -730,6 +734,7 @@ async function rejectAlert(id) {
         // refresh UI immediately
         await fetchAlerts();
         await fetchSlots();
+        updateDashboard();
 
     } catch (err) {
         console.error(err);

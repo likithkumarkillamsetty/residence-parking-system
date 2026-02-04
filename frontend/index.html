@@ -1,141 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Smart Residence Parking Admin</title>
   <link href="styles.css" rel="stylesheet" />
   <script src="https://unpkg.com/tesseract.js@4.0.2/dist/tesseract.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
-<div class="app-container">
-  <nav id="sidebar" class="sidebar">
-    <div class="sidebar-header">
-      <i class="fa-solid fa-square-parking logo-icon"></i>
-      <span class="logo-text">SmartPark</span>
-    </div>
-
-    <ul class="nav-links">
-      <li class="nav-item active" data-target="dashboard"><a href="#"><i class="fa-solid fa-chart-pie"></i><span>Dashboard</span></a></li>
-      <li class="nav-item" data-target="slots"><a href="#"><i class="fa-solid fa-table-cells"></i><span>Live Slots</span></a></li>
-      <li class="nav-item" data-target="ocr"><a href="#"><i class="fa-solid fa-camera"></i><span>OCR Upload</span></a></li>
-      <li class="nav-item" data-target="alerts"><a href="#"><i class="fa-solid fa-triangle-exclamation"></i><span>Alerts</span></a><span id="alert-badge" class="badge hidden">0</span></li>
-      <li class="nav-item" data-target="owners"><a href="#"><i class="fa-solid fa-users"></i><span>Owners</span></a></li>
-      <li class="nav-item" data-target="vehicles"><a href="#"><i class="fa-solid fa-car"></i><span>Vehicles</span></a></li>
-    </ul>
-
-    <div class="sidebar-footer">
-      <div class="user-info">
-        <img src="https://ui-avatars.com/api/?name=Admin+User&background=random" alt="User">
-        <div>
-          <p class="user-name">Admin User</p>
-          <p class="user-role">System Admin</p>
-        </div>
+  <div class="app-container">
+    <nav id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <i class="fa-solid fa-square-parking logo-icon"></i>
+        <span class="logo-text">SmartPark</span>
       </div>
-    </div>
-  </nav>
 
-  <main class="main-content">
-    <header class="top-bar">
-      <h2 id="page-title">Dashboard</h2>
-      <div class="top-bar-actions">
-        <div id="connection-status" class="status-indicator online"><span class="dot"></span> System Online</div>
-        <button id="refresh-btn" class="icon-btn" title="Refresh Data"><i class="fa-solid fa-rotate-right"></i></button>
-      </div>
-    </header>
+      <ul class="nav-links">
+        <li class="nav-item active" data-target="dashboard"><a href="#"><i
+              class="fa-solid fa-chart-pie"></i><span>Dashboard</span></a></li>
+        <li class="nav-item" data-target="slots"><a href="#"><i class="fa-solid fa-table-cells"></i><span>Live
+              Slots</span></a></li>
+        <li class="nav-item" data-target="ocr"><a href="#"><i class="fa-solid fa-camera"></i><span>OCR Upload</span></a>
+        </li>
+        <li class="nav-item" data-target="alerts"><a href="#"><i
+              class="fa-solid fa-triangle-exclamation"></i><span>Alerts</span></a><span id="alert-badge"
+            class="badge hidden">0</span></li>
+        <li class="nav-item" data-target="owners"><a href="#"><i class="fa-solid fa-users"></i><span>Owners</span></a>
+        </li>
+        <li class="nav-item" data-target="vehicles"><a href="#"><i class="fa-solid fa-car"></i><span>Vehicles</span></a>
+        </li>
+      </ul>
 
-    <div id="content-area">
-      <!-- Dashboard -->
-      <section id="view-dashboard" class="view active-view">
-        <div class="stats-grid">
-          <div class="stat-card"><div class="icon-wrapper blue"><i class="fa-solid fa-car"></i></div><div class="stat-info"><h3>Total Slots</h3><p id="total-slots-count">0</p></div></div>
-          <div class="stat-card"><div class="icon-wrapper green"><i class="fa-solid fa-check"></i></div><div class="stat-info"><h3>Available</h3><p id="available-slots-count">0</p></div></div>
-          <div class="stat-card"><div class="icon-wrapper red"><i class="fa-solid fa-triangle-exclamation"></i></div><div class="stat-info"><h3>Active Alerts</h3><p id="active-alerts-count">0</p></div></div>
-        </div>
-        <div class="dashboard-widgets"><div class="widget"><h3>Recent Activity</h3><ul id="activity-log" class="activity-list"><li class="empty-state">No recent activity</li></ul></div></div>
-      </section>
-
-      <!-- Slots -->
-      <section id="view-slots" class="view">
-        <div class="slots-legend">
-          <span class="legend-item"><span class="dot green"></span> Empty</span>
-          <span class="legend-item"><span class="dot yellow"></span> Tentative</span>
-          <span class="legend-item"><span class="dot blue"></span> Occupied (Valid)</span>
-          <span class="legend-item"><span class="dot red"></span> Violation</span>
-        </div>
-        <div id="slots-grid" class="slots-grid"><div class="loading-spinner">Loading Slots...</div></div>
-      </section>
-
-      <!-- OCR -->
-      <section id="view-ocr" class="view">
-        <div class="ocr-container">
-          <div class="ocr-card upload-section">
-            <h3><i class="fa-solid fa-cloud-arrow-up"></i> Upload Image</h3>
-            <p>Select a vehicle number plate image to extract text.</p>
-            <div class="file-upload-wrapper">
-              <input type="file" id="ocr-file-input" accept="image/*">
-              <label for="ocr-file-input" class="file-drop-zone"><i class="fa-solid fa-image"></i><span>Click to select or drag file here</span></label>
-            </div>
-            <div id="image-preview-container" class="hidden">
-              <img id="image-preview" src="" alt="Preview">
-              <button id="remove-image-btn" class="text-btn">Remove</button>
-            </div>
-            <button id="extract-btn" class="btn primary" disabled><i class="fa-solid fa-bolt"></i> Extract Number Plate</button>
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <img src="https://ui-avatars.com/api/?name=Admin+User&background=random" alt="User">
+          <div>
+            <p class="user-name">Admin User</p>
+            <p class="user-role">System Admin</p>
           </div>
+        </div>
+      </div>
+    </nav>
 
-          <div class="ocr-card results-section">
-            <h3>Extraction Results</h3>
-            <div id="extraction-result" class="result-box hidden">
-              <label>Detected Plate Number</label>
-              <div class="plate-display" id="detected-plate">TS09AB1234</div>
-              <div class="action-form">
-                <label for="target-slot-select">Assign to Slot</label>
-                <select id="target-slot-select"><option value="">Select a Slot...</option></select>
-                <button id="finalize-btn" class="btn success"><i class="fa-solid fa-check"></i> Finalize Parking</button>
+    <main class="main-content">
+      <header class="top-bar">
+        <h2 id="page-title">Dashboard</h2>
+        <div class="top-bar-actions">
+          <div id="connection-status" class="status-indicator online"><span class="dot"></span> System Online</div>
+          <button id="refresh-btn" class="icon-btn" title="Refresh Data"><i
+              class="fa-solid fa-rotate-right"></i></button>
+        </div>
+      </header>
+
+      <div id="content-area">
+        <!-- Dashboard -->
+        <section id="view-dashboard" class="view active-view">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="icon-wrapper blue"><i class="fa-solid fa-car"></i></div>
+              <div class="stat-info">
+                <h3>Total Slots</h3>
+                <p id="total-slots-count">0</p>
               </div>
             </div>
-            <div id="ocr-empty-state" class="empty-state"><i class="fa-solid fa-magnifying-glass"></i><p>Upload an image to see results here</p></div>
+            <div class="stat-card">
+              <div class="icon-wrapper green"><i class="fa-solid fa-check"></i></div>
+              <div class="stat-info">
+                <h3>Available</h3>
+                <p id="available-slots-count">0</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="icon-wrapper red"><i class="fa-solid fa-triangle-exclamation"></i></div>
+              <div class="stat-info">
+                <h3>Active Alerts</h3>
+                <p id="active-alerts-count">0</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+          <div class="dashboard-widgets">
+            <div class="widget">
+              <h3>Recent Activity</h3>
+              <ul id="activity-log" class="activity-list">
+                <li class="empty-state">No recent activity</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-      <!-- Alerts -->
-      <section id="view-alerts" class="view">
-        <div class="table-container">
-          <table class="data-table">
-            <thead><tr><th>Slot ID</th><th>Expected Owner</th><th>Detected Vehicle</th><th>Time</th><th>Image</th><th>Action</th></tr></thead>
-            <tbody id="alerts-table-body"></tbody>
-          </table>
-          <div id="alerts-empty" class="empty-message hidden">No active alerts</div>
-        </div>
-      </section>
+        <!-- Slots -->
+        <section id="view-slots" class="view">
+          <div class="slots-legend">
+            <span class="legend-item"><span class="dot green"></span> Empty</span>
+            <span class="legend-item"><span class="dot yellow"></span> Tentative</span>
+            <span class="legend-item"><span class="dot blue"></span> Occupied (Valid)</span>
+            <span class="legend-item"><span class="dot red"></span> Violation</span>
+          </div>
+          <div id="slots-grid" class="slots-grid">
+            <div class="loading-spinner">Loading Slots...</div>
+          </div>
+        </section>
 
-      <!-- Owners -->
-      <section id="view-owners" class="view">
-        <div class="table-container">
-          <table class="data-table">
-            <thead><tr><th>Owner Name</th><th>Flat No</th><th>Phone</th><th>Vehicles</th></tr></thead>
-            <tbody id="owners-table-body"></tbody>
-          </table>
-        </div>
-      </section>
+        <!-- OCR -->
+        <section id="view-ocr" class="view">
+          <div class="ocr-container">
+            <div class="ocr-card upload-section">
+              <h3><i class="fa-solid fa-cloud-arrow-up"></i> Upload Image</h3>
+              <p>Select a vehicle number plate image to extract text.</p>
+              <div class="file-upload-wrapper">
+                <input type="file" id="ocr-file-input" accept="image/*">
+                <label for="ocr-file-input" class="file-drop-zone"><i class="fa-solid fa-image"></i><span>Click to
+                    select or drag file here</span></label>
+              </div>
+              <div id="image-preview-container" class="hidden">
+                <img id="image-preview" src="" alt="Preview">
+                <button id="remove-image-btn" class="text-btn">Remove</button>
+              </div>
+              <button id="extract-btn" class="btn primary" disabled><i class="fa-solid fa-bolt"></i> Extract Number
+                Plate</button>
+            </div>
 
-      <!-- Vehicles -->
-      <section id="view-vehicles" class="view">
-        <div class="table-container">
-          <table class="data-table">
-            <thead><tr><th>Vehicle Number</th><th>Owner ID</th><th>Type</th></tr></thead>
-            <tbody id="vehicles-table-body"></tbody>
-          </table>
-        </div>
-      </section>
-    </div>
-  </main>
-</div>
+            <div class="ocr-card results-section">
+              <h3>Extraction Results</h3>
+              <div id="extraction-result" class="result-box hidden">
+                <label>Detected Plate Number</label>
+                <div class="plate-display" id="detected-plate">TS09AB1234</div>
+                <div class="action-form">
+                  <label for="target-slot-select">Assign to Slot</label>
+                  <select id="target-slot-select">
+                    <option value="">Select a Slot...</option>
+                  </select>
+                  <button id="finalize-btn" class="btn success"><i class="fa-solid fa-check"></i> Finalize
+                    Parking</button>
+                </div>
+              </div>
+              <div id="ocr-empty-state" class="empty-state"><i class="fa-solid fa-magnifying-glass"></i>
+                <p>Upload an image to see results here</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-<div id="toast-container" class="toast-container"></div>
+        <!-- Alerts -->
+        <section id="view-alerts" class="view">
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Slot ID</th>
+                  <th>Expected Owner</th>
+                  <th>Detected Vehicle</th>
+                  <th>Time</th>
+                  <th>Image</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="alerts-table-body"></tbody>
+            </table>
+            <div id="alerts-empty" class="empty-message hidden">No active alerts</div>
+          </div>
+        </section>
 
-<script src="script.js"></script>
+        <!-- Owners -->
+        <section id="view-owners" class="view">
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Owner Name</th>
+                  <th>Flat No</th>
+                  <th>Phone</th>
+                  <th>Vehicles</th>
+                </tr>
+              </thead>
+              <tbody id="owners-table-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Vehicles -->
+        <section id="view-vehicles" class="view">
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Vehicle Number</th>
+                  <th>Owner ID</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody id="vehicles-table-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
